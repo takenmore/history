@@ -13,4 +13,4 @@ A Class Work
     可以看使用说明.txt文件
     直接打开index.html文件，示例迷宫地图（txt）放在map文件夹下，js文件夹为脚本文件以及引用的JQuery库
     操作：wasd 或者 上下左右 进行移动
-![基础界面](/img/运行.png)
+![基础界面](./img/运行.png)
