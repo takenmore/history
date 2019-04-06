@@ -10,5 +10,5 @@
 ## show
 一个layui做的管理前端 架子
 
-##computer-organization
-网课计算机组成原理 作业
+## computer-organization
+网课计算机组成原理 作业 Mars指令集
