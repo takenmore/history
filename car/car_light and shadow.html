@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="three.js"></script>
+    <script type="text/javascript">
+                function init(){
+
+                    var renderer = new THREE.WebGLRenderer({
+                        canvas: document.getElementById('maincanvas'),
+                        antialias: true,
+                        precision:"highp"
+                    });
+                    renderer.shadowMapEnabled = true;
+                    renderer.setClearColor(0x000000);
+                    var scene = new THREE.Scene();
+
+                    // camera
+                    // canvas size is 800x600
+                    var camera = new THREE.PerspectiveCamera(45,4/3,1,1000);
+                    camera.position.set(-5,10,10);
+                    camera.lookAt(new THREE.Vector3(0, 0, 0));
+                    scene.add(camera);
+                    // a axes in the scene
+                    var axes= new THREE.AxisHelper(20);
+                    scene.add(axes);
+                    var plane=new THREE.Mesh(new THREE.PlaneGeometry(10,6),
+                        new THREE.MeshLambertMaterial({
+                            color:0x00ffff
+                            }
+                        )
+                    );
+                    plane.rotation.x=-0.5*Math.PI;
+                    plane.position.x=0;
+                    plane.position.y=-1.2;
+                    plane.position.z=0;
+                    scene.add(plane);
+                    // a cube in the scene
+                    var Cube= new THREE.Mesh(new THREE.CubeGeometry(5,2,2),
+                        new THREE.MeshLambertMaterial({
+                            color: 0x00ccff
+
+                        })
+                    );
+                    function darwtorus() {
+                        var tours=new THREE.Mesh(new THREE.TorusGeometry(0.3,0.12,8,20),
+                            new THREE.MeshLambertMaterial({
+                                color:0x00fff0
+
+                            })
+                        );
+                        return(tours)
+                    }
+                   var tours1=darwtorus();
+
+                    tours1.rotation.y = Math.PI;
+                    tours1.position.x= 2.0;
+                    tours1.position.y=-0.8;
+                    tours1.position.z=1.05;
+                    var tours2=darwtorus();
+                    tours2.rotation.y = Math.PI;
+                    tours2.position.x= -2.0;
+                    tours2.position.y=-0.8;
+                    tours2.position.z=1.05;
+                    var tours3=darwtorus();
+                    tours3.rotation.y = Math.PI;
+                    tours3.position.x= 2.0;
+                    tours3.position.y=-0.8;
+                    tours3.position.z=-0.95;
+                    var tours4=darwtorus();
+                    tours4.rotation.y = Math.PI;
+                    tours4.position.x= -2.0;
+                    tours4.position.y=-0.8;
+                    tours4.position.z=-0.95;
+                    scene.add(Cube);
+                    scene.add(tours1);
+                    scene.add(tours2);
+                    scene.add(tours3);
+                    scene.add(tours4);
+                    var Light= new THREE.SpotLight(0xffffff, 1,1000);
+                    Light.position.set(2, 4, 5);
+                    Light.castShadow = true;
+                    Light.shadowCameraNear = 0.5;
+                    Light.shadowCameraFar =2;
+                    Light.shadowCameraFov = 30;
+                    Light.shadowCameraVisible = true;
+                    Cube.castShadow=true;
+                    plane.receiveShadow = true;
+                    scene.add(Light);
+                    // render
+                    renderer.render(scene, camera);
+                }
+    </script>
+
+</head>
+<body onload="init()">
+    <canvas id="maincanvas" width="1000px" height="750px"></canvas>
+</body>
+</html>
