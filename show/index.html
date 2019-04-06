@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    <title>智能手环看护系统</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/layui/layui.js"></script>
+    <link rel="stylesheet" href="js/layui/css/layui.css">
+</head>
+<body>
+    <div class=" dx-header header header-demo">
+        <h2 class="title">智能养老院看护系统</h2>
+        <ul class="dx-nav">
+            <li>欢迎您，Betty</li>
+            <li id="updatePassword-btn" class="change">修改密码</li>
+            <li class="change">退出登录</li>
+        </ul>
+    </div>
+<nav class="menu">
+    <ul class="layui-nav layui-nav-tree" lay-filter="menu">
+        <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;"><i class="iconfont">&#xe658;</i><span class="index">首页</span></a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;"><i class="iconfont">&#xe60a;</i> <span class="menu-title">老人管理</span></a>
+            <dl class="layui-nav-child">
+                <dd dx-menu="username"><a href="javascript:;"><i class="iconfont-child">&#xe661;</i>老人列表</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;"><i class="iconfont">&#xe61a;</i> <span class="menu-title">实时看护</span></a>
+            <dl class="layui-nav-child">
+                <dd dx-menu="location"><a href="#"><i class="iconfont-child">&#xe601;</i> 定位</a></dd>
+                <dd><a href="javascript:;"><i class="iconfont-child">&#xe676;</i> 视频</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;"><i class="iconfont-child">&#xe6b4;</i><span class="menu-title">APP用户管理</span></a>
+        </li>
+        <li class="layui-nav-item">
+            <a><i class="iconfont">&#xe640;</i><span class="menu-title">系统用户管理</span></a>
+            <dl class="layui-nav-child">
+                <dd><a><i class="iconfont">&#xe866;</i>后台用户</a></dd>
+                <dd><a><i class="iconfont">&#xe682;</i>用户权限</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item layui-nav-itemed">
+            <a><i class="iconfont">&#xe787;</i><span class="menu-title">界面设置</span></a>
+        </li>
+    </ul>
+</nav>
+<div class="dx-module">
+    <div class="dx-content" id="dx-content">
+        <div class="layui-form" id="td">
+            <section class="dx-list-default">
+                <div class="bread">
+                      <span class="layui-breadcrumb">
+                            <a href="#">首页</a>
+                            <a href="#">老人管理</a>
+                            <a href="#"><cite>老人列表</cite></a>
+                      </span>
+                </div>
+                <div class="dx-operation-bar">
+                    <form class="layui-form" lay-filter="form">
+                        <div class="layui-form-item">
+                            <div class="layui-input-inline">
+                                <input class="layui-input" id="idnumber" type="tel" name="username" placeholder="请输入ID号"
+                                       autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-inline">
+                                <input class="layui-input" id="name" type="tel" name="phone" placeholder="请输入老人姓名"
+                                       autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn btn-blue" id="search" type="button"><i class="iconfont-search">
+                                    &#xe660;</i>查询
+                                </button>
+                            </div>
+                        </div>
+                        <div class="layui-form-item item-right">
+                            <div class="layui-input-block">
+                                <button class="layui-btn btn-simple-blue layui-btn-primary">
+                                    <i class="iconfont-new">&#xe69a;</i>新增
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <table class="layui-table" id="tab1">
+                    <thead>
+                    <tr>
+                        <th>ID号</th>
+                        <th>姓名</th>
+                        <th>年龄</th>
+                        <th>联系方式</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>40423</td>
+                        <td>张清河</td>
+                        <td>68</td>
+                        <td>13545891247</td>
+                        <td><a id="eye" onclick=""><i class="iconfont-eye">&#xe65a;</i></a>
+                            <a><i class="iconfont-new" style="color: #45e1e1;">&#xe69a;</i></a>
+                            <a><i class="iconfont-delete" style="color: #45e1e1;">&#xe61c;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>40424</td>
+                        <td>王裕丰</td>
+                        <td>65</td>
+                        <td>13576654383</td>
+                        <td><a><i class="iconfont-eye">&#xe65a;</i></a>
+                            <a><i class="iconfont-new" style="color: #45e1e1;">&#xe69a;</i></a>
+                            <a><i class="iconfont-delete" style="color: #45e1e1;">&#xe61c;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>40425</td>
+                        <td>张牧之</td>
+                        <td>71</td>
+                        <td>13578340812</td>
+                        <td><a><i class="iconfont-eye">&#xe65a;</i></a>
+                            <a><i class="iconfont-new" style="color: #45e1e1;">&#xe69a;</i></a>
+                            <a><i class="iconfont-delete" style="color: #45e1e1;">&#xe61c;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>40426</td>
+                        <td>程国强</td>
+                        <td>57</td>
+                        <td>13578899767</td>
+                        <td><a><i class="iconfont-eye">&#xe65a;</i></a>
+                            <a><i class="iconfont-new" style="color: #45e1e1;">&#xe69a;</i></a>
+                            <a><i class="iconfont-delete" style="color: #45e1e1;">&#xe61c;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>40427</td>
+                        <td>丰硕</td>
+                        <td>70</td>
+                        <td>13524786312</td>
+                        <td><a><i class="iconfont-eye">&#xe65a;</i></a>
+                            <a><i class="iconfont-new" style="color: #45e1e1;">&#xe69a;</i></a>
+                            <a><i class="iconfont-delete" style="color: #45e1e1;">&#xe61c;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>40428</td>
+                        <td>张婕</td>
+                        <td>63</td>
+                        <td>18250148875</td>
+                        <td><a><i class="iconfont-eye">&#xe65a;</i></a>
+                            <a><i class="iconfont-new" style="color: #45e1e1;">&#xe69a;</i></a>
+                            <a><i class="iconfont-delete" style="color: #45e1e1;">&#xe61c;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>40429</td>
+                        <td>于海轩</td>
+                        <td>80</td>
+                        <td>13766789007</td>
+                        <td><a><i class="iconfont-eye">&#xe65a;</i></a>
+                            <a><i class="iconfont-new" style="color: #45e1e1;">&#xe69a;</i></a>
+                            <a><i class="iconfont-delete" style="color: #45e1e1;">&#xe61c;</i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div id="dx-page-default" class="dx-page-default"></div>
+            </section>
+        </div>
+        <div class="mapcontainer" id="map">
+            <div id="bread" class="bread">
+                      <span class="layui-breadcrumb">
+                            <a href="#">首页</a>
+                            <a href="#">实时看护</a>
+                          <a href="#"><cite>实时定位</cite></a>
+                            <!--<a href="#"><cite>轨迹查询</cite></a>-->
+                      </span>
+            </div>
+            <div class="dx-operation-bar" style="left: 13%;width: 65%">
+                <form class="layui-form">
+                    <div class="layui-form-item">
+                        <div class="layui-input-inline">
+                            <input type="tel" name="username" placeholder="请输入ID号" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-inline">
+                            <input type="tel" name="phone" placeholder="请输入老人姓名" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn btn-blue map-btn" disabled="disabled"><i class="iconfont-search">
+                                &#xe660;</i>查询
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--定位canvas-->
+            <div>
+            <canvas id="myCanvas" width="600" height="514" style="border:1px solid #c3c3c3;">
+                Your browser does not support the canvas element.
+            </canvas>
+            <canvas id="point" width="20" height="28">
+                Your browser does not support the canvas element.
+            </canvas></div>
+            <div class="message">
+                <form class="layui-form message-form">
+                    <div class="layui-form-item">
+                        <div style="padding-top: 3%">
+                            <h2 class="message-ID">ID 号:</h2>
+                            <textarea class="message-IDarea">40425</textarea>
+                            <h2 class="message-Name">老人姓名:</h2>
+                            <textarea class="message-Namearea">张牧之</textarea>
+                            <br/>
+                            <br/>
+                            <h2 class="message-Age">年 龄:</h2>
+                            <textarea class="message-Agearea">71</textarea>
+                            <h2 class="message-Location">老人位置:</h2>
+                            <textarea class="message-Locationarea">公寓一栋 408</textarea>
+                            <br/>
+                            <br/>
+                            <!--<div class="layui-form-pane" style="margin-top: 15px;">-->
+                                <!--<div class="layui-form-item">-->
+                                    <!--<div class="layui-input-inline">-->
+                                        <!--<label class="layui-form-label">日期选择:</label>-->
+                                    <!--</div>-->
+                                    <!--<div class="layui-input-inline">-->
+                                        <!--<input class="layui-input" placeholder="开始时间" id="LAY_demorange_s">-->
+                                        <!--<input class="layui-input" placeholder="截止时间" id="LAY_demorange_e">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <h2 class="message-illed">病  历:</h2>
+                                <br>
+                                <textarea class="message-illedarea"></textarea>
+                            </div>
+                        </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="warning" class="index-warning">
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label">姓名</label>
+            <label class="layui-form-label" id="warning-name">张牧之</label>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">ID号</label>
+            <label class="layui-form-label" id="warning-id">40425</label>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">所在区域</label>
+            <label class="layui-form-label" id="warning-location">&nbsp;公寓1栋 408</label>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">警告原因</label>
+            <label class="layui-form-label" id="warning-reason">意外摔倒</label>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    layui.use(['layer', 'element', 'laypage', 'form', 'laydate'], function () {
+        var layer = layui.layer
+            , element = layui.element()
+            , form = layui.form()
+            , laypage = layui.laypage
+            , laydate = layui.laydate;
+        form.render();
+        window.$ = layui.jquery;
+        var table = document.getElementById("td");
+        var map = document.getElementById("map");
+        var bread=document.getElementById("bread");
+        var look= document.getElementById("eye");
+        look.onclick=function () {
+            table.style.display = "none";
+            map.style.display = "block";
+            bread.style.display="none";
+        };
+        // 监听导航点击
+        element.on('nav(menu)', function (elem) {
+            var mUrl = elem.attr('dx-menu');
+
+            if (mUrl == "username") {
+                table.style.display = "block";
+                map.style.display = "none";
+                layer.open({                //弹出层
+                    type: 1,
+                    skin: 'layui-layer-lan',
+                    closeBtn: 1,
+                    shadeClose: true,
+                    title: '警告',
+                    content: $('#warning')
+                })
+            }
+            else if (mUrl == "location") {
+                table.style.display = "none";
+                map.style.display = "block";
+                bread.style.display="block";
+            }
+            else {
+                table.style.display = "none";
+                map.style.display = "none";
+                bread.style.display="none";
+            }
+        });
+        laypage({
+            cont: 'dx-page-default'
+            , pages: 5
+            , skin: '#6a96df'
+            , prev: '<em><</em>'
+            , next: '<em>></em>'
+        });
+        var start = {
+            min:  laydate.now(-15)
+            , max: laydate.now(-1)
+            , istoday: false
+            , choose: function (datas) {
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas; //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            min:  laydate.now(-15)
+            , max:  laydate.now(-1)
+            , istoday: false
+            , choose: function (datas) {
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        document.getElementById('LAY_demorange_s').onclick = function () {
+            start.elem = this;
+            laydate(start);
+        };
+        document.getElementById('LAY_demorange_e').onclick = function () {
+            end.elem = this;
+            laydate(end);
+        }
+    });
+</script>
+<!--//表单查询-->
+<script type="text/javascript">
+    var oSearch = document.getElementById('search');
+    var onumber = document.getElementById('idnumber');
+    var oname = document.getElementById('name');
+    var otab = document.getElementById('tab1');
+    oSearch.onclick = function () {
+        for (var i = 0; i < otab.tBodies[0].rows.length; i++) {
+            var sTab_id = otab.tBodies[0].rows[i].cells[0].innerHTML;
+            var sTab_name = otab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
+            var number = onumber.value;
+            var name = oname.value.toLowerCase();
+            var arr = number.split(' ');
+            var arr2 = name.split(' ');
+
+            function searchname() {
+                for (var k = 0; k < arr2.length; k++) {
+                    if (sTab_name.search(arr2[k]) != -1) {
+                        otab.tBodies[0].rows[i].style.background = 'yellow';
+                    }
+                }
+            }
+
+            function searchid() {
+                for (var j = 0; j < arr.length; j++) {
+                    if (sTab_id.search(arr[j]) != -1) {
+                        otab.tBodies[0].rows[i].style.background = 'yellow';
+                    }
+                }
+            }
+
+            if (name == 0 && number != 0) {
+                otab.tBodies[0].rows[i].style.background = '';
+                searchid();
+            }
+            else if (number == 0 && name != 0) {
+                otab.tBodies[0].rows[i].style.background = '';
+                searchname();
+            }
+            else if (number == 0 && name == 0) {
+                otab.tBodies[0].rows[i].style.background = '';
+            }
+            else {
+                otab.tBodies[0].rows[i].style.background = '';
+                searchid();
+                searchname();
+            }
+        }
+    }
+</script>
+<script src="js/canvas.js"></script>
+</body>
+</html>

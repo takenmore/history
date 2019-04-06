@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/*body铺满屏幕*/
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/*icon*/
+@font-face {
+    font-family: 'iconfont';  /* project id 311698 */
+    src: url(../font/iconfont.eot);
+    src: url(../font/iconfont.eot) format('embedded-opentype'),
+    url(../font/iconfont.woff)  format('woff'),
+    url(../font/iconfont.ttf) format('truetype'),url(../font/iconfont.svg) format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont";
+    font-size: 18px !important;
+    color: #45e1e8;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .2px;
+    -moz-osx-font-smoothing: grayscale;
+    padding-right: 16px
+}
+
+.iconfont-child {
+    font-family: "iconfont";
+    font-size: 18px !important;
+    color: #45e1e8;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .2px;
+    -moz-osx-font-smoothing: grayscale;
+    padding-right: 13px;
+    position: relative;
+    top: 4%;
+}
+.iconfont-search {
+    font-family: "iconfont";
+    font-size: 18px !important;
+    color: #ffffff;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .2px;
+    -moz-osx-font-smoothing: grayscale;
+    padding-right: 1px;
+    position: relative;
+    top: 4%;
+}
+
+.iconfont-new {
+    font-family: "iconfont";
+    font-size: 18px !important;
+    color: #000000;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .2px;
+    -moz-osx-font-smoothing: grayscale;
+    padding-right: 11px;
+    position: relative;
+    top: 4%;
+}
+
+/*header*/
+.dx-header {
+    border-bottom: 0 !important;
+    height: 65px !important;
+    background-color: #242b33 !important;
+}
+
+.dx-header .title {
+    font-size: 24px;
+    color: #c4c4c4;
+    position: absolute;
+    left:13%;
+    width: 250px;
+    line-height: 70px
+}
+
+.dx-nav {
+    position: fixed;
+    right: 0;
+    width: 400px;
+}
+
+.dx-nav li {
+    float: left;
+    color: #d8d8d8;
+    font-size: 14px;
+    line-height: 70px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.dx-nav .change:hover {
+    color: #2e8ded;
+    cursor: pointer;
+}
+
+
+.dx-nav li i {
+    font-size: 14px;
+    color: #242b33
+}
+
+.dx-nav li span:first-child {
+    margin-right: 10px;
+    display: inline-block;
+    width: 2%;
+    height: 2%;
+    background-color: #424e5c;
+    border-radius: 50%;
+    line-height: 38px;
+    text-align: center;
+    vertical-align: middle
+}
+
+/*侧边导航*/
+.menu {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    height: 100%;
+    overflow: auto;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.menu .layui-nav {
+    background-color: #404549;
+    height: 100%;
+}
+
+.menu .layui-nav .layui-nav-item .index {
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.menu .layui-nav .layui-nav-item .menu-title {
+    font-size: 15px;
+    color: #fff9ec;
+}
+
+.menu .layui-nav .layui-nav-item a {
+    height: 30%;
+    line-height: 50px;
+    position: relative;
+}
+
+.menu .layui-nav-tree .layui-nav-more {
+    right: 10%;
+    top: 50%;
+    margin-top: -6px
+}
+
+.menu .layui-nav .layui-nav-item a:hover {
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    background-color: #5cc9ce;
+    border-left: 5px solid #01AAED !important;
+}
+
+.layui-nav-bar {
+    background-color: #01AAED !important;
+    height: 0;
+    width: 6px;
+}
+
+.menu .layui-nav .layui-nav-item .layui-nav-child a {
+    padding-left: 50px;
+}
+
+.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-this > a:hover {
+    background-color: #5cc9ce !important;
+    color: #fff;
+}
+
+/*主体内容*/
+.dx-module {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    padding: 70px 0 0 210px
+}
+
+.dx-content {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    position: relative
+}
+
+.bread {
+    height: 5%;
+    position: absolute;
+    top: 0.2%;
+    left: 2%;
+    }
+/*面包屑*/
+.dx-operation-bar{
+    position: absolute;
+    top:7%;
+    left: 10%;
+    width: 1000px;
+}
+.mapcontainer{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+img{
+    position: absolute;
+    top:15%;
+    left:4%;
+    height: 560px;
+}
+#myCanvas{
+    position: absolute;
+    top:15%;
+    left:4%;
+}
+h2{
+    float: left;
+}
+.message-Name{
+    position: relative;
+    left:10%;
+}
+.message-Age{
+    position: relative;
+    left:0;
+    top: 10%;
+}
+.message-Location{
+    position: relative;
+    left:10%;
+    top: 10%;
+}
+textarea{
+    position: relative;
+    left: 5%;
+    height: 23px;
+    resize: none;
+    display: inline;
+    float: left;
+}
+.message-Namearea{
+    position: relative;
+    left:13%;
+    height: 23px;
+    resize: none;
+    display: inline;
+    float: left;
+}
+.message-Locationarea{
+    position: relative;
+    left:13%;
+    height: 23px;
+    resize: none;
+    display: inline;
+    float: left;
+}
+.message-illedarea{
+    width: 400px;
+    height: 400px;
+}
+
+.message{
+    position:absolute;
+    left: 55%;
+    top:15%;
+    overflow: hidden;
+    width: 500px;
+}
+.dx-list-default .layui-table thead tr {
+    line-height: 50px;
+    background-color: #5cc9ce !important;
+}
+
+.layui-table th {
+    text-align: center !important;
+}
+
+.dx-list-default {
+    padding: 0 25px
+}
+
+.dx-operation-bar .layui-form {
+    display: inline-block;
+}
+
+.dx-operation-bar .layui-form-item {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+.layui-table{
+    position: absolute;
+    top:15%;
+    width: 1300px!important;
+}
+.layui-form-item .layui-input-inline {
+    width: 290px !important;
+}
+
+.layui-form-item .layui-input-block {
+    margin-left: 10px !important;
+}
+
+.btn-blue {
+    position: relative;
+    left: 25%;
+    background-color: #01AAED !important;
+}
+
+.item-right {
+   position: absolute;
+    right: 0;
+
+}
+
+.dx-list-default .layui-table td {
+    line-height: 50px;
+    padding: 0;
+    font-size: 14px;
+    color: #666;
+    text-align: center
+}
+
+#td {
+    display: none;
+}
+
+.layui-table tr:nth-child(even) {
+    background-color: #e4f9fa;
+}
+/*分页*/
+.dx-page-default {
+    position: absolute;
+    left: 34%;
+    top:85%;
+    padding-left: 30px;
+    margin-top: 30px;
+    width: 230px;
+}
+/*弹窗*/
+.index-warning{
+    display: none;
+    padding: 20px 0 10px!important;
+    width: 300px;
+}
