@@ -1,0 +1,31 @@
+body{
+    text-align: center;
+    margin: 0 auto;
+}
+#mazemap td {
+    width: 30px;
+    height: 30px;
+    font-size: 2pt;
+    border: 2px beige solid
+}
+.wrap{
+    text-align: center;
+    margin: 0 auto;
+}
+#mazemap{
+    text-align: center;
+    margin:0 auto;
+}
+.inputtext{
+    text-align: center;
+    width: 50px;
+}
+.time{
+    width:3%;
+    position: absolute;
+    top: 15%;
+    left: 60%;
+    text-align: center;
+    margin-left: 60px;
+    background-color: lightgrey;
+}

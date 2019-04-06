@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+<div class="wrap">
+    <h3>迷宫游戏</h3>
+    <p>导入迷宫地图文件</p>
+    <input id="time" class="time" type="text" readonly value="20" autocomplete="off">
+    <div>
+        <input type="file" id="files" style="display: none" accept="text/plain"/>
+        <input type="button" id="import" value="导入"/>
+        <input type="button" id="export" value="导出" >
+        <input type="text" id="rowChange" class="inputtext"/>
+        <input type="text" id="colChange"  class="inputtext"/>
+        <button id="change">作弊一下</button>
+        <button id="pass">求一条路径</button>
+    </div>
+    <div id="maze">
+        <table id="mazemap">
+        </table>
+        <p id="message"></p>
+    </div>
+</div>
+<script src="js/Framework/jquery-3.2.1.min.js"></script>
+<script src="js/maze.js"></script>
+</body>
+</html>
